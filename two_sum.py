@@ -8,7 +8,7 @@ def twoSum(nums, target):
     indices = []  # remove this
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
-            if nums[i] + nums[j] == target:  # if (i != j and nums[i] + nums[j] == target):
+            if nums[i] + nums[j] == target:  
                 indices.append(i)
                 indices.append(j)
                 return indices  # return [i, j]
@@ -18,11 +18,22 @@ def twoSum(nums, target):
 def twoSumOpt(nums, target):
     num_to_index = {}
     for i in range(len(nums)):
-        if target - nums[i] in num_to_index:
-            return [num_to_index[target - nums[i]], i]
+        complement = target - nums[i]
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
         num_to_index[nums[i]] = i
     return []
 
+
+# Cleaner version
+def twoSumClean(nums, target):
+    hash = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in hash:
+            return [hash[complement], i]
+        hash[num] = i
+        
 
 if __name__ == '__main__':
     # res = twoSum(nums=[2, 77, 11, 15, 7], target=9)
