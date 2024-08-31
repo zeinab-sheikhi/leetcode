@@ -57,6 +57,6 @@ def longestCommonPrefix(strs):
 
 
 if __name__ == '__main__':
-    # res = longestCommonPrefix(strs=["flower", "flow", "flight"])
-    res = longestCommonPrefix(strs=["dog", "racecar", "car"])
+    res = longestCommonPrefix(strs=["flower", "flow", "flight"])
+    # res = longestCommonPrefix(strs=["dog", "racecar", "car"])
     print(res)
