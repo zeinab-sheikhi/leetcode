@@ -30,10 +30,10 @@ def longestCommonPrefix(strs):
                 return clp
         clp += prefix
     return clp
-   
-   
-    # Other Solutions
 
+
+    # Other Solutions
+    
     # sorted_list = sorted(strs)
     # clp = ""
     # first = sorted_list[0]
@@ -54,7 +54,6 @@ def longestCommonPrefix(strs):
     #     if not prefix:
     #         return ""
     # return prefix
-
 
 
 if __name__ == '__main__':
