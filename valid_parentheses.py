@@ -6,14 +6,13 @@ def isValid(s):
 
     stack = []
 
-    open_chars = ["(", "[", "{"]
-    close_chars = [")", "]", "}"]
+    matching_paranthesis = {")": "(", "]": "[", "}": "{"}
 
     for char in s:
-        if char in open_chars:
+        if char in matching_paranthesis.values():
             stack.append(char)
-        elif char in close_chars:
-            if not stack or close_chars.index(char) != open_chars.index(stack[-1]):
+        elif char in matching_paranthesis:
+            if not stack or stack[-1] == matching_paranthesis[char]:
                 return False
             stack.pop()
     return not stack
@@ -140,5 +139,6 @@ if __name__ == '__main__':
     # s = "([)]"
     s = "[({(())}[()])]"
     # s = "(("
+    s = "({[})]"
     res = isValid(s)
     print(res)
